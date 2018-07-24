@@ -134,6 +134,7 @@ defmodule IntegerTest do
     assert Integer.parse("--1") === :error
     assert Integer.parse("+-1") === :error
     assert Integer.parse("three") === :error
+    assert Integer.parse(nil) === :error
 
     assert Integer.parse("12", 10) === {12, ""}
     assert Integer.parse("-12", 12) === {-14, ""}

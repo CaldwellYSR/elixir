@@ -233,6 +233,8 @@ defmodule Integer do
     raise ArgumentError, "invalid base #{inspect(base)}"
   end
 
+  def parse(nil, _base), do: nil
+
   def parse(binary, base) do
     case count_digits(binary, base) do
       0 ->
